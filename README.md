@@ -1,4 +1,4 @@
-| ![Plataforma](https://img.shields.io/badge/PYTHON%20VERSION-3.14.0-green?style=for-the-badge&logo=bitrise) | [![Progress](https://img.shields.io/badge/STATUS-COMENZANDO-yellow)](https://choosealicense.com/licenses/mit/) | [![GPLv3 License](https://img.shields.io/badge/LICENSE-GPL%20v3-red.svg)](https://opensource.org/licenses/) | [![Version]]
+| ![Plataforma](https://img.shields.io/badge/PYTHON%20VERSION-3.14.0-green?style=for-the-badge&logo=bitrise) | [![Progress](https://img.shields.io/badge/STATUS-COMENZANDO-yellow)](https://choosealicense.com/licenses/mit/) | [![GPLv3 License](https://img.shields.io/badge/LICENSE-GPL%20v3-red.svg)](https://opensource.org/licenses/) | [![Version]
 (http://img.shields.io/badge/NODE%20VERSION-24.16.0-069016?style=for-the-badge&logo=bitrise)| :--- | :---: | ---: |
 
 
