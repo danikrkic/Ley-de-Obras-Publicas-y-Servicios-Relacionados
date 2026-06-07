@@ -1,0 +1,5 @@
+Aqui colocaremos las versiones de nuestras herramientas en el desarrollo:
+Python 3.14
+Django 24.
+Node
+Postgresql 18
