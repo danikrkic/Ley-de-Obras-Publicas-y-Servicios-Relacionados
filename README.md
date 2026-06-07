@@ -21,13 +21,15 @@ Analizador y gestor de contratos alineado a la **Ley de Obras Públicas y Servic
 
 ## Descripción del Proyecto
 
-El **SGCOP** es una plataforma web diseñada para automatizar, auditar y gestionar el ciclo de vida de los contratos de obra pública en México, garantizando el cumplimiento estricto de la **LOPSRM**. 
+El **SGCOP** es una plataforma web desarrollada como prototipo funcional para automatizar y centralizar el flujo de información de los contratos de obra pública en México, tomando como referencia los lineamientos de la **LOPSRM**. 
 
-### Módulos Principales a Desarrollar:
-* **Gestión de Contratos:** Registro de bases, licitaciones, fallos y firmas contractuales.
-* **Control de Estimaciones:** Módulo core para el cálculo y validación de estimaciones de obra, amortizaciones de anticipos, retenciones económicas y devoluciones.
-* **Panel de Roles:** Accesos diferenciados para Residentes de Obra, Supervisores y Administradores/Auditores.
+El objetivo principal es sustituir el control tradicional en archivos de Excel por una aplicación web interactiva que permita mitigar errores humanos en el seguimiento del proyecto mediante flujos básicos de validación.
 
+### Alcance del Prototipo (Módulos a Implementar):
+* **Módulo de Contratos y Documentación:** Registro de datos generales de contratos y carga de archivos de soporte (catálogo de conceptos, finanzas y programa de obra en formato PDF/Excel).
+* **Módulo de Bitácora Digital:** Registro cronológico de notas técnicas (instrucciones, acuerdos u observaciones) clasificadas por autor, simulando el funcionamiento de una bitácora electrónica.
+* **Módulo de Estimaciones y Convenios:** Captura de avances de obra por periodos, revisión de los mismos mediante un sistema de estados básico (`Aceptada` / `Rechazada`) y registro de solicitudes de modificaciones contractuales.
+* **Módulo de Visualización Operativa:** Consultas gráficas sencillas (Curva S) e indicadores visuales de semaforización para detectar desfases entre el avance real y el programado.
 ---
 
 ## Arquitectura del Sistema
