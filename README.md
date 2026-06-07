@@ -1,4 +1,4 @@
-| ![Plataforma](https://img.shields.io/badge/PLATAFORMA-JAVA-red) | [![Progress](https://img.shields.io/badge/STATUS-COMENZANDO-yellow)](https://choosealicense.com/licenses/mit/) | [![GPLv3 License](https://img.shields.io/badge/LICENSE-GPL%20v3-red.svg)](https://opensource.org/licenses/) |
+| ![Plataforma](****) | [![Progress](https://img.shields.io/badge/STATUS-COMENZANDO-yellow)](https://choosealicense.com/licenses/mit/) | [![GPLv3 License](https://img.shields.io/badge/LICENSE-GPL%20v3-red.svg)](https://opensource.org/licenses/) |
 | :--- | :---: | ---: |
 
 
