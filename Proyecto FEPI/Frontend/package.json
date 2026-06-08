@@ -1,8 +1,17 @@
 {
-     "name": "frontend",
-     "version": "1.0.0",
-     "scripts": {
-       "dev": "echo 'Frontend listo'"
-     },
-     "dependencies": {}
-   }
+  "name": "node-frontend",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}
