@@ -1,1 +1,6 @@
-Aqui estará el directorio de DB
+    environment:
+      POSTGRES_DB: plataforma_fepi
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: 1234
+    ports:
+      - "5432:5432"
