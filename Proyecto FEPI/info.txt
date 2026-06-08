@@ -3,3 +3,8 @@ Python 3.14
 Django 24.
 Node
 Postgresql 18
+
+Para ejecutar: docker compose up --build
+Para cerrar el contenedor: docker compose down
+
+No olviden usar push y pull para los cambios
