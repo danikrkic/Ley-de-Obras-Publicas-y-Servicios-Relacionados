@@ -1,44 +1,60 @@
-version: '3.8'
-
 services:
+
   db:
-    image: postgres:18-alpine
+    image: postgres:18
     container_name: postgres_db
+
     restart: always
+
+    env_file:
+      - .env
+
     environment:
-      POSTGRES_DB: plataforma_fepi
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+
     ports:
       - "5432:5432"
+
     volumes:
       - postgres_data:/var/lib/postgresql
 
   backend:
-    build: ./backend
+    build:
+      context: ./backend
+
     container_name: django_backend
+
     restart: always
+
+    env_file:
+      - .env
+
     volumes:
       - ./backend:/app
+
     ports:
       - "8000:8000"
-    environment:
-      - DB_HOST=db
-      - DB_NAME=plataforma_fepi
-      - DB_USER=admin
-      - DB_PASSWORD=1234
+
     depends_on:
       - db
 
   frontend:
-    build: ./frontend
-    container_name: node_frontend
+    build:
+      context: ./frontend
+
+    container_name: react_frontend
+
     restart: always
+
     volumes:
       - ./frontend:/app
       - /app/node_modules
+
     ports:
-      - "3000:3000"
+      - "5173:5173"
+
     depends_on:
       - backend
 
