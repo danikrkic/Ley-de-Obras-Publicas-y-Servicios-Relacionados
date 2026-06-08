@@ -15,7 +15,7 @@ const mockUsers = {
   supervision: { email: "supervision@gacm.mx", password: "1234" },
 }
 
-export default function Login() {
+export default function Login({ onLogin }) {
   const [rol, setRol] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -25,7 +25,7 @@ export default function Login() {
     if (!rol) { setError("Selecciona un rol"); return }
     const user = mockUsers[rol]
     if (email === user.email && password === user.password) {
-      alert(`Bienvenido como ${rol}`)
+      onLogin(rol)
     } else {
       setError("Credenciales incorrectas")
     }
