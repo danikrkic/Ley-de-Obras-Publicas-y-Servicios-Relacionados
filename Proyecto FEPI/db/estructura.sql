@@ -75,7 +75,7 @@ CREATE TABLE notas_bitacora (
 
 -- es consulta -------------------------------------------
 
--- HU005 -------------------------------------------------
+-- HU005 ------------ AUN NO ESTA LISTA -------------------------------------
 
 CREATE TABLE documentos_contrato (
     id SERIAL PRIMARY KEY,
