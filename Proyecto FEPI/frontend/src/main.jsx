@@ -6,29 +6,84 @@ import Login from "@/pages/auth/Login"
 import MainLayout from "@/components/layout/MainLayout"
 
 function App() {
-  const [rol, setRol] = useState(null)
+  const [isAuthenticated, setIsAuthenticated] = useState(
+    !!localStorage.getItem("access_token")
+  )
+
+  const handleLogin = () => {
+    setIsAuthenticated(true)
+  }
+
+  const handleLogout = () => {
+    localStorage.removeItem("access_token")
+    localStorage.removeItem("refresh_token")
+    setIsAuthenticated(false)
+  }
+
+  // Temporal. Más adelante lo obtendremos desde el backend.
+  const rol = "dependencia"
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={
-          rol ? <Navigate to="/contratos" /> : <Login onLogin={setRol} />
-        } />
-        <Route element={rol ? <MainLayout rol={rol} onLogout={() => setRol(null)} /> : <Navigate to="/" />}>
-          <Route path="/contratos" element={<div>Módulo Contratos</div>} />
-          <Route path="/bitacora" element={<div>Módulo Bitácora</div>} />
-          <Route path="/documentacion" element={<div>Módulo Documentación</div>} />
-          <Route path="/estimaciones" element={<div>Módulo Estimaciones</div>} />
-          <Route path="/seguimiento" element={<div>Módulo Seguimiento</div>} />
-          <Route path="/convenios" element={<div>Módulo Convenios</div>} />
-          <Route path="/dashboard" element={<div>Módulo Dashboard</div>} />
-          <Route path="/pagos" element={<div>Módulo Pagos</div>} />
+        <Route
+          path="/"
+          element={
+            isAuthenticated
+              ? <Navigate to="/contratos" replace />
+              : <Login onLogin={handleLogin} />
+          }
+        />
+
+        <Route
+          element={
+            isAuthenticated ? (
+              <MainLayout
+                rol={rol}
+                onLogout={handleLogout}
+              />
+            ) : (
+              <Navigate to="/" replace />
+            )
+          }
+        >
+          <Route
+            path="/contratos"
+            element={<div>Módulo Contratos</div>}
+          />
+          <Route
+            path="/bitacora"
+            element={<div>Módulo Bitácora</div>}
+          />
+          <Route
+            path="/documentacion"
+            element={<div>Módulo Documentación</div>}
+          />
+          <Route
+            path="/estimaciones"
+            element={<div>Módulo Estimaciones</div>}
+          />
+          <Route
+            path="/seguimiento"
+            element={<div>Módulo Seguimiento</div>}
+          />
+          <Route
+            path="/convenios"
+            element={<div>Módulo Convenios</div>}
+          />
+          <Route
+            path="/dashboard"
+            element={<div>Módulo Dashboard</div>}
+          />
+          <Route
+            path="/pagos"
+            element={<div>Módulo Pagos</div>}
+          />
         </Route>
       </Routes>
     </BrowserRouter>
   )
 }
-
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <App />
