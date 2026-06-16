@@ -7,21 +7,24 @@ import MainLayout from "@/components/layout/MainLayout"
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(
-    !!localStorage.getItem("access_token")
-  )
+  !!localStorage.getItem("access_token")
+)
 
-  const handleLogin = () => {
-    setIsAuthenticated(true)
-  }
+const [usuario, setUsuario] = useState(null)
 
-  const handleLogout = () => {
-    localStorage.removeItem("access_token")
-    localStorage.removeItem("refresh_token")
-    setIsAuthenticated(false)
-  }
+const handleLogin = (usuarioData) => {
+  setUsuario(usuarioData)
+  setIsAuthenticated(true)
+}
 
-  // Temporal. Más adelante lo obtendremos desde el backend.
-  const rol = "dependencia"
+const handleLogout = () => {
+  localStorage.removeItem("access_token")
+  localStorage.removeItem("refresh_token")
+  setUsuario(null)
+  setIsAuthenticated(false)
+}
+
+  const rol = usuario?.rol
 
   return (
     <BrowserRouter>

@@ -29,15 +29,28 @@ export default function Login({ onLogin }) {
       const data = await response.json()
 
       if (response.ok) {
-        // Guardar los tokens JWT
+         // Guardar los tokens JWT
         localStorage.setItem("access_token", data.access)
         localStorage.setItem("refresh_token", data.refresh)
 
-        // Notificar al componente padre que el login fue exitoso
-        if (onLogin) {
-          onLogin()
+        // Obtener información del usuario autenticado
+        const userResponse = await fetch(
+        "http://localhost:8000/api/usuarios/me/",
+        {
+          headers: {
+            Authorization: `Bearer ${data.access}`,
+          },
         }
-      } else {
+        )
+
+      const usuario = await userResponse.json()
+
+      // Notificar al componente padre
+      if (onLogin) {
+       onLogin(usuario)
+      }
+      } 
+      else {
         setError(
           data.detail || "Usuario o contraseña incorrectos"
         )
